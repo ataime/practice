@@ -62,17 +62,91 @@ if expression;then
 fi
 
 
-if..else.. 语法：
-if expression
+if..elif..else.. 语法：
+if expression1
 then 
 	statement1
 	statement2
-
+elif expression2
+then
+	statement3
+else
+	statement4
 fi
 
 
+退出：
+非0 退出：exit 120 
+exit 0
 
 
 
+多条件判断语句：
+case variable in 
+value1)
+	statement1
+	statement2
+value2)
+	statement3
+*)
+	statement4
+esac
+
+
+
+
+运算符：
+1 . expr 是一个shell 命令，可以计算表达式的值，语法 ： expr expression, 对 expression 有格式要求
+2 . $(()) 计算表达式，这个形式可以采用松散或者紧凑的格式来书写表达式
+3 . $[] 同 $(()).
+4 . let , let n=n+1
+
++=	| 
+-=	|
+*=	|
+/=	| 
+%=	| 求模赋值
+<<	| 左移
+>>	| 右移
+&	| 按位与
+|	| 按位或
+~	| 按位非
+^	| 按位异或
+复合运算：
+<<=	|
+>>=	|
+&=	|
+|=	|
+^=	|
+
+自增：
+++variable
+variable--
+
+数据进制：
+#十进制
+((x=20))
+#八进制
+((x=020))
+#十六进制
+((x=0x20))
+ 
+#二进制
+((x="2#100000"))
+echo "$x"
+
+#八进制
+((x="8#123"))
+
+#十六进制
+((x="16#32"))
 
 BLOCK
+
+
+result=`expr 2-100`
+echo $result
+result=`expr 2 - 100`
+echo $result
+
+echo $(( 5 +9))
