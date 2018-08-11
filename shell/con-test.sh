@@ -1,6 +1,19 @@
 #! /bin/bash
 
 # 语法： [ 1 -eq 2 ] 或者 test 1 -gt 3 
+
+# 当使用变量参与运算时，需要使用 [[ ]]
+
+i=3
+if [ 1 -eq 2 ]
+then
+	echo "OK"
+elif [[ i -gt 2 ]]
+then	
+	echo "NONE"
+fi
+
+
 <<BLOCK
 
 如果测试为真，返回值 $? 为0 ， 测试为假 $? 为非 0
