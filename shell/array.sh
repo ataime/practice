@@ -65,7 +65,7 @@ newlinux={"${linux[@]}"}
 arr4=("${arr1[@]}" "${arr2[@]}")
 echo $arr4
 
-#加载文件内容到数值
+#加载文件内容到数组
 content=(`cat "array.sh"`)
 echo ${content}
 
