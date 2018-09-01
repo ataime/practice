@@ -38,3 +38,8 @@ BLOCK
 
 BLOCK
 
+# export 将变量声明为环境变量
+
+
+
+
